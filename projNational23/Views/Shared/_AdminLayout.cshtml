@@ -1,0 +1,211 @@
+﻿
+@{
+    ViewBag.Title = "_AdminLayout";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        @{
+            ViewBag.Title = "btnprofile";
+        }
+    </title>
+    @Styles.Render("~/content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @RenderSection("scripts")
+    <style>
+        .btn {
+            background: rgba(234, 142, 77, 0.87);
+            /*display: block;*/
+            padding: 10px;
+            width: 140px;
+            height: 40px;
+            border: solid;
+            background-color: #ef9d63;
+            text-decoration-color: white;
+            font-size: 12px;
+            cursor: pointer;
+            background-position: center;
+            text-align: center;
+        }
+
+        .name {
+            border: 1px solid #ff0000;
+        }
+
+        .btn:hover {
+            background-color: #f29b5e;
+            color: #ffffff;
+        }
+        /*<meta name="viewport" content="width=device-width, initial-scale=1.0" >*/
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    
+  
+    <div class="container-fluid">
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+    @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })*
+            </div>
+            <div class="w3-top">
+                <div class="w3-bar w3-theme-d2 w3-left-align">
+                    <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-hover-white w3-theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
+                    @Html.ActionLink("EDU-ASSIST", "Index", "Home", null, new { @class = "w3-bar-item w3-button" })
+
+                    @Html.ActionLink("About Us", "About", "Home", null, new { @class = "w3-bar-item w3-button" })
+
+
+                    <a href="#contact" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Contact</a>
+                    <div class="w3-dropdown-hover w3-hide-small">
+                        <button class="w3-button" title="Notifications">Schemes <i class="fa fa-caret-down"></i></button>
+                        <div class="w3-dropdown-content w3-card-4 w3-bar-block">
+                            @Html.ActionLink("Scheme 1", "", null, new { @class = "w3-bar-item w3-button" })
+                            @Html.ActionLink("Scheme 2", "", null, new { @class = "w3-bar-item w3-button" })
+                            @Html.ActionLink("Scheme 3", "", null, new { @class = "w3-bar-item w3-button" })
+                        </div>
+                    </div>
+                    @Html.Partial("_loginPartial")
+                    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-teal" title="Search"><i class="fa fa-search"></i></a>
+                </div>
+
+                <!-- Navbar on small screens -->
+                <div id="navDemo" class="w3-bar-block w3-theme-d2 w3-hide w3-hide-large w3-hide-medium">
+                    @Html.ActionLink("About Us", "About","Home", null, new { @class = "w3-bar-item w3-button" })
+                    @Html.ActionLink("Contact", "#contact", null, new { @class = "w3-bar-item w3-button" })
+                    @Html.ActionLink("Login", "Login", "Login", null, new { @class = "w3-bar-item w3-button" })
+                    @Html.ActionLink("Register", "Register", "Register", null, new { @class = "w3-bar-item w3-button" })
+
+
+                </div>
+            </div>
+
+        </nav>
+       </div>
+        <div class="container-fluid" style="  border:5px #000000;">
+            <br />
+            <div class="row" style="border:double;border-color:black;">
+
+                <div class="col-sm-1 col-md-4 col-lg-5 name" style="width:200px;height:550px">
+                    @Html.Partial("_LoginPartial")
+
+                    @Html.ActionLink("Update profile", "_EdProfile", "Adminprof", null, new { @class = "btn" })
+
+
+                    <br />
+                    @Html.ActionLink("Verified Application", "_ViewVerifiedApp", "AdminViewer", null, new { @class = "btn" })
+
+
+                    <br />
+                    @Html.ActionLink("View Application", "_AdminView", "AdminViewer", null, new { @class = "btn" })
+
+
+                    <br />
+                    @Html.ActionLink("Add Admin", "Register", "Register", null, new { @class = "btn" })
+                </div>
+                <div class="col-sm-1 col-md-5 col-lg-2 name" style="background-color:#d4e6f6;width:700px;height:550px">
+                    <h3>Student Details</h3>
+                    <hr />
+                    <div style="overflow-y:scroll;background-color:aliceblue;width:680px;height:450px">
+                        @RenderBody()
+                    </div>
+
+                </div>
+                <div class="col-sm-1 col-md-4 col-lg-5 name" style="background-color:#ade4f6;overflow-y:scroll;width:760px;height:550px">
+
+                    @RenderSection("files", required: true)
+
+                </div>
+                <footer>
+                    <div>
+                        @Html.ActionLink("Accepted", "_Approved", "AdminViewer", null, new { @class = "btn" })
+
+                        @Html.ActionLink("Rejected", "_Rejected", "AdminViewe", null, new { @class = "btn" })
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </body>
+</html>
+@*{
+    ViewBag.Title = "_AdminLayout";
+}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="true">
+    <title>
+        @{
+            ViewBag.Title = "btnprofile";
+        }
+    </title>
+    <link href="~/Content/AdminCSS.css" rel="stylesheet" />
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @RenderSection("scripts")
+
+</head>
+<body>
+    <div class="container-fluid" style="  border:5px #000000;">
+        <br />
+        <div class="row" style="border:double;border-color:black;">
+
+            <div class="col-sm-1 col-md-4 col-lg-5 name" style="width:200px;height:550px">
+                @Html.Partial("_LoginPartial")
+
+                @Html.ActionLink("Update profile", "_EdProfile", "Adminprof", null, new { @class = "btn" })
+
+
+                <br />
+                @Html.ActionLink("Verified Application", "_ViewVerifiedApp", "AdminViewer", null, new { @class = "btn" })
+
+
+                <br />
+                @Html.ActionLink("View Application", "_AdminView", "AdminViewer", null, new { @class = "btn" })
+
+
+                <br />
+                @Html.ActionLink("Add Admin", "Register", "Register", null, new { @class = "btn" })
+            </div>
+            <div class="col-sm-1 col-md-5 col-lg-2 name" style="background-color:#d4e6f6;width:700px;height:550px">
+                <h3>Student Details</h3>
+                <hr />
+                <div style="overflow-y:scroll;background-color:aliceblue;width:680px;height:450px">
+                    @RenderBody()
+                </div>
+
+            </div>
+            <div class="col-sm-1 col-md-4 col-lg-5 name" style="background-color:#ade4f6;overflow-y:scroll;width:760px;height:550px">
+
+                @RenderSection("files", required: true)
+
+            </div>
+            <footer>
+                <div>
+                    @Html.ActionLink("Accepted", "", "", null, new { @class = "btn" })
+
+                    @Html.ActionLink("Rejected", "", "", null, new { @class = "btn" })
+                </div>
+            </footer>
+        </div>
+    </div>
+</body>
+</html>*@

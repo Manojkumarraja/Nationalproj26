@@ -1,0 +1,787 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="NationModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Academic_Details">
+    <Key>
+      <PropertyRef Name="Register_No" />
+    </Key>
+    <Property Name="Register_No" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Present_Course" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Course_Period" Type="Int32" Nullable="false" />
+    <Property Name="Mode_Of_Study" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Course_Start_Date" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Institution_Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="University_Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Previous_Course" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Degree_Percentage" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="REG_Number" Relationship="Self.reg_fk" FromRole="Academic_Details" ToRole="REG_Number" />
+  </EntityType>
+  <EntityType Name="AcademicHSC_Details">
+    <Key>
+      <PropertyRef Name="Roll_No" />
+    </Key>
+    <Property Name="Roll_No" Type="Int32" Nullable="false" />
+    <Property Name="Marks_Percentage" Type="Int32" Nullable="false" />
+    <Property Name="Specialization" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Board" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Year_Of_Passing" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="REG_Number" Relationship="Self.hs_fk" FromRole="AcademicHSC_Details" ToRole="REG_Number" />
+  </EntityType>
+  <EntityType Name="AcademicSSC_Details">
+    <Key>
+      <PropertyRef Name="sscRoll_No" />
+    </Key>
+    <Property Name="sscRoll_No" Type="Int32" Nullable="false" />
+    <Property Name="sscMarks_Percentage" Type="Int32" Nullable="false" />
+    <Property Name="sscBoard" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="sscYear_Of_Passing" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="REG_Number" Relationship="Self.ss_fk" FromRole="AcademicSSC_Details" ToRole="REG_Number" />
+  </EntityType>
+  <EntityType Name="Admin_Details">
+    <Key>
+      <PropertyRef Name="Admin_Id" />
+    </Key>
+    <Property Name="Admin_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Login_Id" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Designation" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Contact_Number" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="RegScheme_details" Relationship="Self.ad_fk" FromRole="Admin_Details" ToRole="RegScheme_details" />
+    <NavigationProperty Name="Login_Details" Relationship="Self.Lg_fk" FromRole="Admin_Details" ToRole="Login_Details" />
+  </EntityType>
+  <EntityType Name="Applicant_Details">
+    <Key>
+      <PropertyRef Name="Applicant_Id" />
+    </Key>
+    <Property Name="Applicant_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Login_Id" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="First_Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Last_Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Date_Of_Birth" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Aadhar_Number" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Gender" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Religion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Caste" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Scheme_Id" Type="Int32" />
+    <Property Name="Marital_Status" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Economic_Backward_Class" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Economic_Backward_Class_Cert" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Father_Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Mother_Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Annual_Income" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="Income_Certificate_No" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="State" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="City" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Qualification" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Phone_Number" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Disability" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="Disabilty_Desc" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="RegScheme_details" Relationship="Self.ap_fk" FromRole="Applicant_Details" ToRole="RegScheme_details" />
+    <NavigationProperty Name="REG_Number" Relationship="Self.app_fk" FromRole="Applicant_Details" ToRole="REG_Number" />
+    <NavigationProperty Name="Login_Details" Relationship="Self.Lg1_fk" FromRole="Applicant_Details" ToRole="Login_Details" />
+    <NavigationProperty Name="Scheme_Details" Relationship="Self.sc_fk" FromRole="Applicant_Details" ToRole="Scheme_Details" />
+    <NavigationProperty Name="Files3" Relationship="NationModel.Ap6_fk" FromRole="Applicant_Details" ToRole="Files3" />
+  </EntityType>
+  <EntityType Name="Caste_Details">
+    <Key>
+      <PropertyRef Name="Caste_Id" />
+    </Key>
+    <Property Name="Caste_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Caste1" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Caste2" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Caste3" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Scheme_Details" Relationship="Self.Cs_fk" FromRole="Caste_Details" ToRole="Scheme_Details" />
+  </EntityType>
+  <EntityType Name="Economic_Backward_Class_Details">
+    <Key>
+      <PropertyRef Name="Ec_Id" />
+    </Key>
+    <Property Name="Ec_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Condition_1" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="condition_2" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Scheme_Details" Relationship="Self.FK__Scheme_De__Econo__1FCDBCEB" FromRole="Economic_Backward_Class_Details" ToRole="Scheme_Details" />
+  </EntityType>
+  <EntityType Name="Gender_Details">
+    <Key>
+      <PropertyRef Name="Gen_Id" />
+    </Key>
+    <Property Name="Gen_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="gender_1" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="gender_2" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="gender_3" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Scheme_Details" Relationship="Self.FK__Scheme_De__Gende__20C1E124" FromRole="Gender_Details" ToRole="Scheme_Details" />
+  </EntityType>
+  <EntityType Name="Login_Details">
+    <Key>
+      <PropertyRef Name="Login_Id" />
+    </Key>
+    <Property Name="Login_Id" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Email_Id" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="User_Type" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <NavigationProperty Name="Admin_Details" Relationship="Self.Lg_fk" FromRole="Login_Details" ToRole="Admin_Details" />
+    <NavigationProperty Name="Applicant_Details" Relationship="Self.Lg1_fk" FromRole="Login_Details" ToRole="Applicant_Details" />
+  </EntityType>
+  <EntityType Name="NationalEdu_Details">
+    <Key>
+      <PropertyRef Name="MAT_SAT_Rollno" />
+    </Key>
+    <Property Name="MAT_SAT_Rollno" Type="Int32" Nullable="false" />
+    <Property Name="MAT_SAT_Score" Type="Int32" />
+    <Property Name="Eighth_class_per" Type="Int32" />
+    <Property Name="Nineth_class_per" Type="Int32" />
+    <Property Name="Eleventh_class_per" Type="Int32" />
+    <Property Name="Eleventh_specialization" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="REG_Number" Relationship="Self.mat_fk" FromRole="NationalEdu_Details" ToRole="REG_Number" />
+  </EntityType>
+  <EntityType Name="Qualification_Details">
+    <Key>
+      <PropertyRef Name="Qualification_Id" />
+    </Key>
+    <Property Name="Qualification_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Qualification1" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Qualification2" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Scheme_Details" Relationship="Self.Q_fk" FromRole="Qualification_Details" ToRole="Scheme_Details" />
+  </EntityType>
+  <EntityType Name="REG_Number">
+    <Key>
+      <PropertyRef Name="Applicant_Id" />
+    </Key>
+    <Property Name="Applicant_Id" Type="Int32" Nullable="false" />
+    <Property Name="Register_Number" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Hsc_Rollno" Type="Int32" />
+    <Property Name="Ssc_Rollno" Type="Int32" />
+    <Property Name="MAT_SAT_Rollno" Type="Int32" />
+    <NavigationProperty Name="Academic_Details" Relationship="Self.reg_fk" FromRole="REG_Number" ToRole="Academic_Details" />
+    <NavigationProperty Name="AcademicHSC_Details" Relationship="Self.hs_fk" FromRole="REG_Number" ToRole="AcademicHSC_Details" />
+    <NavigationProperty Name="AcademicSSC_Details" Relationship="Self.ss_fk" FromRole="REG_Number" ToRole="AcademicSSC_Details" />
+    <NavigationProperty Name="Applicant_Details" Relationship="Self.app_fk" FromRole="REG_Number" ToRole="Applicant_Details" />
+    <NavigationProperty Name="NationalEdu_Details" Relationship="Self.mat_fk" FromRole="REG_Number" ToRole="NationalEdu_Details" />
+  </EntityType>
+  <EntityType Name="RegScheme_details">
+    <Key>
+      <PropertyRef Name="Applicant_ID" />
+    </Key>
+    <Property Name="Applicant_ID" Type="Int32" Nullable="false" />
+    <Property Name="Admin_Id" Type="Int32" />
+    <Property Name="Date_of_apply" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Smart_Card_Id" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="App_status" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Acc_No" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Bank_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IFSC_CODE" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Payment_Status" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Funded_amt" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Fund_transfer_date" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="Admin_Details" Relationship="Self.ad_fk" FromRole="RegScheme_details" ToRole="Admin_Details" />
+    <NavigationProperty Name="Applicant_Details" Relationship="Self.ap_fk" FromRole="RegScheme_details" ToRole="Applicant_Details" />
+  </EntityType>
+  <EntityType Name="Scheme_Details">
+    <Key>
+      <PropertyRef Name="Scheme_Id" />
+    </Key>
+    <Property Name="Scheme_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Scheme_Type" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Scheme_Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Scholarship_Amount" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="Age_Criteria" Type="Int32" Nullable="false" />
+    <Property Name="Marks_Criteria" Type="Int32" Nullable="false" />
+    <Property Name="Caste" Type="Int32" />
+    <Property Name="Annual_Income" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="Qualification_Criteria" Type="Int32" />
+    <Property Name="Economically_Backward_Classes" Type="Int32" Nullable="false" />
+    <Property Name="Gender_Id" Type="Int32" />
+    <NavigationProperty Name="Applicant_Details" Relationship="Self.sc_fk" FromRole="Scheme_Details" ToRole="Applicant_Details" />
+    <NavigationProperty Name="Caste_Details" Relationship="Self.Cs_fk" FromRole="Scheme_Details" ToRole="Caste_Details" />
+    <NavigationProperty Name="Economic_Backward_Class_Details" Relationship="Self.FK__Scheme_De__Econo__1FCDBCEB" FromRole="Scheme_Details" ToRole="Economic_Backward_Class_Details" />
+    <NavigationProperty Name="Gender_Details" Relationship="Self.FK__Scheme_De__Gende__20C1E124" FromRole="Scheme_Details" ToRole="Gender_Details" />
+    <NavigationProperty Name="Qualification_Details" Relationship="Self.Q_fk" FromRole="Scheme_Details" ToRole="Qualification_Details" />
+  </EntityType>
+  <Association Name="reg_fk">
+    <End Role="Academic_Details" Type="Self.Academic_Details" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="REG_Number" Type="Self.REG_Number" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Academic_Details">
+        <PropertyRef Name="Register_No" />
+      </Principal>
+      <Dependent Role="REG_Number">
+        <PropertyRef Name="Register_Number" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="hs_fk">
+    <End Role="AcademicHSC_Details" Type="Self.AcademicHSC_Details" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="REG_Number" Type="Self.REG_Number" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AcademicHSC_Details">
+        <PropertyRef Name="Roll_No" />
+      </Principal>
+      <Dependent Role="REG_Number">
+        <PropertyRef Name="Hsc_Rollno" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ss_fk">
+    <End Role="AcademicSSC_Details" Type="Self.AcademicSSC_Details" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="REG_Number" Type="Self.REG_Number" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AcademicSSC_Details">
+        <PropertyRef Name="sscRoll_No" />
+      </Principal>
+      <Dependent Role="REG_Number">
+        <PropertyRef Name="Ssc_Rollno" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ad_fk">
+    <End Role="Admin_Details" Type="Self.Admin_Details" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="RegScheme_details" Type="Self.RegScheme_details" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Admin_Details">
+        <PropertyRef Name="Admin_Id" />
+      </Principal>
+      <Dependent Role="RegScheme_details">
+        <PropertyRef Name="Admin_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Lg_fk">
+    <End Role="Login_Details" Type="Self.Login_Details" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Admin_Details" Type="Self.Admin_Details" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Login_Details">
+        <PropertyRef Name="Login_Id" />
+      </Principal>
+      <Dependent Role="Admin_Details">
+        <PropertyRef Name="Login_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ap_fk">
+    <End Role="Applicant_Details" Type="Self.Applicant_Details" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="RegScheme_details" Type="Self.RegScheme_details" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Applicant_Details">
+        <PropertyRef Name="Applicant_Id" />
+      </Principal>
+      <Dependent Role="RegScheme_details">
+        <PropertyRef Name="Applicant_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="app_fk">
+    <End Role="Applicant_Details" Type="Self.Applicant_Details" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="REG_Number" Type="Self.REG_Number" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Applicant_Details">
+        <PropertyRef Name="Applicant_Id" />
+      </Principal>
+      <Dependent Role="REG_Number">
+        <PropertyRef Name="Applicant_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Lg1_fk">
+    <End Role="Login_Details" Type="Self.Login_Details" Multiplicity="0..1" />
+    <End Role="Applicant_Details" Type="Self.Applicant_Details" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Login_Details">
+        <PropertyRef Name="Login_Id" />
+      </Principal>
+      <Dependent Role="Applicant_Details">
+        <PropertyRef Name="Login_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="sc_fk">
+    <End Role="Scheme_Details" Type="Self.Scheme_Details" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Applicant_Details" Type="Self.Applicant_Details" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Scheme_Details">
+        <PropertyRef Name="Scheme_Id" />
+      </Principal>
+      <Dependent Role="Applicant_Details">
+        <PropertyRef Name="Scheme_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Cs_fk">
+    <End Role="Caste_Details" Type="Self.Caste_Details" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Scheme_Details" Type="Self.Scheme_Details" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Caste_Details">
+        <PropertyRef Name="Caste_Id" />
+      </Principal>
+      <Dependent Role="Scheme_Details">
+        <PropertyRef Name="Caste" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Scheme_De__Econo__1FCDBCEB">
+    <End Role="Economic_Backward_Class_Details" Type="Self.Economic_Backward_Class_Details" Multiplicity="1" />
+    <End Role="Scheme_Details" Type="Self.Scheme_Details" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Economic_Backward_Class_Details">
+        <PropertyRef Name="Ec_Id" />
+      </Principal>
+      <Dependent Role="Scheme_Details">
+        <PropertyRef Name="Economically_Backward_Classes" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Scheme_De__Gende__20C1E124">
+    <End Role="Gender_Details" Type="Self.Gender_Details" Multiplicity="0..1" />
+    <End Role="Scheme_Details" Type="Self.Scheme_Details" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Gender_Details">
+        <PropertyRef Name="Gen_Id" />
+      </Principal>
+      <Dependent Role="Scheme_Details">
+        <PropertyRef Name="Gender_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="mat_fk">
+    <End Role="NationalEdu_Details" Type="Self.NationalEdu_Details" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="REG_Number" Type="Self.REG_Number" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NationalEdu_Details">
+        <PropertyRef Name="MAT_SAT_Rollno" />
+      </Principal>
+      <Dependent Role="REG_Number">
+        <PropertyRef Name="MAT_SAT_Rollno" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Q_fk">
+    <End Role="Qualification_Details" Type="Self.Qualification_Details" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Scheme_Details" Type="Self.Scheme_Details" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Qualification_Details">
+        <PropertyRef Name="Qualification_Id" />
+      </Principal>
+      <Dependent Role="Scheme_Details">
+        <PropertyRef Name="Qualification_Criteria" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="NationEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Academic_Details" EntityType="Self.Academic_Details" />
+    <EntitySet Name="AcademicHSC_Details" EntityType="Self.AcademicHSC_Details" />
+    <EntitySet Name="AcademicSSC_Details" EntityType="Self.AcademicSSC_Details" />
+    <EntitySet Name="Admin_Details" EntityType="Self.Admin_Details" />
+    <EntitySet Name="Applicant_Details" EntityType="Self.Applicant_Details" />
+    <EntitySet Name="Caste_Details" EntityType="Self.Caste_Details" />
+    <EntitySet Name="Economic_Backward_Class_Details" EntityType="Self.Economic_Backward_Class_Details" />
+    <EntitySet Name="Gender_Details" EntityType="Self.Gender_Details" />
+    <EntitySet Name="Login_Details" EntityType="Self.Login_Details" />
+    <EntitySet Name="NationalEdu_Details" EntityType="Self.NationalEdu_Details" />
+    <EntitySet Name="Qualification_Details" EntityType="Self.Qualification_Details" />
+    <EntitySet Name="REG_Number" EntityType="Self.REG_Number" />
+    <EntitySet Name="RegScheme_details" EntityType="Self.RegScheme_details" />
+    <EntitySet Name="Scheme_Details" EntityType="Self.Scheme_Details" />
+    <AssociationSet Name="reg_fk" Association="Self.reg_fk">
+      <End Role="Academic_Details" EntitySet="Academic_Details" />
+      <End Role="REG_Number" EntitySet="REG_Number" />
+    </AssociationSet>
+    <AssociationSet Name="hs_fk" Association="Self.hs_fk">
+      <End Role="AcademicHSC_Details" EntitySet="AcademicHSC_Details" />
+      <End Role="REG_Number" EntitySet="REG_Number" />
+    </AssociationSet>
+    <AssociationSet Name="ss_fk" Association="Self.ss_fk">
+      <End Role="AcademicSSC_Details" EntitySet="AcademicSSC_Details" />
+      <End Role="REG_Number" EntitySet="REG_Number" />
+    </AssociationSet>
+    <AssociationSet Name="ad_fk" Association="Self.ad_fk">
+      <End Role="Admin_Details" EntitySet="Admin_Details" />
+      <End Role="RegScheme_details" EntitySet="RegScheme_details" />
+    </AssociationSet>
+    <AssociationSet Name="Lg_fk" Association="Self.Lg_fk">
+      <End Role="Login_Details" EntitySet="Login_Details" />
+      <End Role="Admin_Details" EntitySet="Admin_Details" />
+    </AssociationSet>
+    <AssociationSet Name="ap_fk" Association="Self.ap_fk">
+      <End Role="Applicant_Details" EntitySet="Applicant_Details" />
+      <End Role="RegScheme_details" EntitySet="RegScheme_details" />
+    </AssociationSet>
+    <AssociationSet Name="app_fk" Association="Self.app_fk">
+      <End Role="Applicant_Details" EntitySet="Applicant_Details" />
+      <End Role="REG_Number" EntitySet="REG_Number" />
+    </AssociationSet>
+    <AssociationSet Name="Lg1_fk" Association="Self.Lg1_fk">
+      <End Role="Login_Details" EntitySet="Login_Details" />
+      <End Role="Applicant_Details" EntitySet="Applicant_Details" />
+    </AssociationSet>
+    <AssociationSet Name="sc_fk" Association="Self.sc_fk">
+      <End Role="Scheme_Details" EntitySet="Scheme_Details" />
+      <End Role="Applicant_Details" EntitySet="Applicant_Details" />
+    </AssociationSet>
+    <AssociationSet Name="Cs_fk" Association="Self.Cs_fk">
+      <End Role="Caste_Details" EntitySet="Caste_Details" />
+      <End Role="Scheme_Details" EntitySet="Scheme_Details" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Scheme_De__Econo__1FCDBCEB" Association="Self.FK__Scheme_De__Econo__1FCDBCEB">
+      <End Role="Economic_Backward_Class_Details" EntitySet="Economic_Backward_Class_Details" />
+      <End Role="Scheme_Details" EntitySet="Scheme_Details" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Scheme_De__Gende__20C1E124" Association="Self.FK__Scheme_De__Gende__20C1E124">
+      <End Role="Gender_Details" EntitySet="Gender_Details" />
+      <End Role="Scheme_Details" EntitySet="Scheme_Details" />
+    </AssociationSet>
+    <AssociationSet Name="mat_fk" Association="Self.mat_fk">
+      <End Role="NationalEdu_Details" EntitySet="NationalEdu_Details" />
+      <End Role="REG_Number" EntitySet="REG_Number" />
+    </AssociationSet>
+    <AssociationSet Name="Q_fk" Association="Self.Q_fk">
+      <End Role="Qualification_Details" EntitySet="Qualification_Details" />
+      <End Role="Scheme_Details" EntitySet="Scheme_Details" />
+    </AssociationSet>
+    <FunctionImport Name="Nat">
+      <Parameter Name="MatRoll" Mode="In" Type="Int32" />
+      <Parameter Name="MatMark" Mode="In" Type="Int32" />
+      <Parameter Name="p8cls" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Nat11">
+      <Parameter Name="p11cls" Mode="In" Type="Int32" />
+      <Parameter Name="p11special" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Nat9">
+      <Parameter Name="p9cls" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Regscheme">
+      <Parameter Name="Applicant_Id" Mode="In" Type="Int32" />
+      <Parameter Name="Date_of_apply" Mode="In" Type="DateTime" />
+      <Parameter Name="Smart_Card_Id" Mode="In" Type="String" />
+      <Parameter Name="Acc_No" Mode="In" Type="String" />
+      <Parameter Name="Bank_name" Mode="In" Type="String" />
+      <Parameter Name="IFSC_CODE" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="RegschemeAD">
+      <Parameter Name="Admin_Id" Mode="In" Type="Int32" />
+      <Parameter Name="App_status" Mode="In" Type="String" />
+      <Parameter Name="Payment_Status" Mode="In" Type="String" />
+      <Parameter Name="Funded_amt" Mode="In" Type="Decimal" />
+      <Parameter Name="Fund_transfer_date" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="adminview" ReturnType="Collection(NationModel.adminview_Result)" />
+    <FunctionImport Name="Regdeg">
+      <Parameter Name="App_id" Mode="In" Type="Int32" />
+      <Parameter Name="regnum" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Reghsc">
+      <Parameter Name="App_id" Mode="In" Type="Int32" />
+      <Parameter Name="Rollnum" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="RegNat">
+      <Parameter Name="App_id" Mode="In" Type="Int32" />
+      <Parameter Name="Nat" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Regssc">
+      <Parameter Name="App_id" Mode="In" Type="Int32" />
+      <Parameter Name="Rollnum" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="RegNatt">
+      <Parameter Name="App_id" Mode="In" Type="Int32" />
+      <Parameter Name="Nat" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Nat111">
+      <Parameter Name="natroll" Mode="In" Type="Int32" />
+      <Parameter Name="p11cls" Mode="In" Type="Int32" />
+      <Parameter Name="spec" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Nat99">
+      <Parameter Name="natroll" Mode="In" Type="Int32" />
+      <Parameter Name="p9cls" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <EntitySet Name="Files3" EntityType="NationModel.Files3" />
+    <AssociationSet Name="Ap6_fk" Association="NationModel.Ap6_fk">
+      <End Role="Applicant_Details" EntitySet="Applicant_Details" />
+      <End Role="Files3" EntitySet="Files3" />
+    </AssociationSet>
+    <FunctionImport Name="verifiedapp" ReturnType="Collection(NationModel.verifiedapp_Result)" />
+    <FunctionImport Name="viewapp" ReturnType="Collection(NationModel.viewapp_Result)" />
+    <FunctionImport Name="viewappl" ReturnType="Collection(NationModel.viewappl_Result)" />
+    <FunctionImport Name="verifiedappl" ReturnType="Collection(NationModel.verifiedappl_Result)" />
+    <FunctionImport Name="Regschstud">
+      <Parameter Name="AppId" Mode="In" Type="Int32" />
+      <Parameter Name="AppStatus" Mode="In" Type="String" />
+      <Parameter Name="PaymentStatus" Mode="In" Type="String" />
+      <Parameter Name="Fundedamt" Mode="In" Type="Decimal" />
+    </FunctionImport>
+    <FunctionImport Name="Regschadminn">
+      <Parameter Name="AppId" Mode="In" Type="Int32" />
+      <Parameter Name="AppStatus" Mode="In" Type="String" />
+      <Parameter Name="PaymentStatus" Mode="In" Type="String" />
+      <Parameter Name="Fundedamt" Mode="In" Type="Decimal" />
+      <Parameter Name="Funddate" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="RegSchAdRej">
+      <Parameter Name="AppId" Mode="In" Type="Int32" />
+      <Parameter Name="AppStatus" Mode="In" Type="String" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="adminview_Result">
+    <Property Type="Int32" Name="Applicant_Id" Nullable="false" />
+    <Property Type="String" Name="First_Name" Nullable="false" />
+    <Property Type="String" Name="Last_Name" Nullable="false" />
+    <Property Type="DateTime" Name="Date_Of_Birth" Nullable="false" />
+    <Property Type="String" Name="Aadhar_Number" Nullable="false" MaxLength="50" />
+    <Property Type="Int32" Name="Scheme_Id" Nullable="true" />
+    <Property Type="String" Name="Economic_Backward_Class" Nullable="false" MaxLength="5" />
+    <Property Type="String" Name="Economic_Backward_Class_Cert" Nullable="false" />
+    <Property Type="String" Name="Father_Name" Nullable="false" />
+    <Property Type="String" Name="Mother_Name" Nullable="false" />
+    <Property Type="Decimal" Name="Annual_Income" Nullable="false" Precision="19" />
+    <Property Type="String" Name="Income_Certificate_No" Nullable="false" />
+    <Property Type="String" Name="Address" Nullable="false" />
+    <Property Type="String" Name="Gender" Nullable="false" MaxLength="25" />
+    <Property Type="String" Name="Religion" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Caste" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="Disability" Nullable="false" MaxLength="1" />
+    <Property Type="String" Name="Present_Course" Nullable="false" />
+    <Property Type="Int32" Name="Course_Period" Nullable="false" />
+    <Property Type="String" Name="Mode_Of_Study" Nullable="false" />
+    <Property Type="DateTime" Name="Course_Start_Date" Nullable="false" />
+    <Property Type="String" Name="Institution_Name" Nullable="false" />
+    <Property Type="Int32" Name="Degree_Percentage" Nullable="false" />
+    <Property Type="Int32" Name="Roll_No" Nullable="false" />
+    <Property Type="Int32" Name="Marks_Percentage" Nullable="false" />
+    <Property Type="Int32" Name="sscRoll_No" Nullable="false" />
+    <Property Type="Int32" Name="sscMarks_Percentage" Nullable="false" />
+    <Property Type="Int32" Name="MAT_SAT_Rollno" Nullable="false" />
+    <Property Type="Int32" Name="MAT_SAT_Score" Nullable="true" />
+    <Property Type="Int32" Name="Eighth_class_per" Nullable="true" />
+    <Property Type="Int32" Name="Nineth_class_per" Nullable="true" />
+    <Property Type="Int32" Name="Eleventh_class_per" Nullable="true" />
+    <Property Type="DateTime" Name="Date_of_apply" Nullable="false" />
+    <Property Type="String" Name="Smart_Card_Id" Nullable="false" />
+    <Property Type="String" Name="Acc_No" Nullable="false" />
+    <Property Type="String" Name="Bank_name" Nullable="false" />
+    <Property Type="String" Name="IFSC_CODE" Nullable="false" />
+    <Property Type="Binary" Name="Photo" Nullable="true" />
+    <Property Type="Binary" Name="Aadhar_Card" Nullable="true" />
+    <Property Type="Binary" Name="Community_Certificate" Nullable="true" />
+    <Property Type="Binary" Name="Degree_Marksheet" Nullable="true" />
+    <Property Type="Binary" Name="HSC_Marksheet" Nullable="true" />
+    <Property Type="Binary" Name="SSC_MarkSheet" Nullable="true" />
+    <Property Type="Binary" Name="Fees_Receipt" Nullable="true" />
+    <Property Type="Binary" Name="Id_Card" Nullable="true" />
+    <Property Type="Binary" Name="Nativity_Certificate" Nullable="true" />
+    <Property Type="Binary" Name="AcknowledgeCert_Class8" Nullable="true" />
+    <Property Type="Binary" Name="AcknowledgeCert_Class9" Nullable="true" />
+    <Property Type="Binary" Name="AcknowledgeCert_Class11" Nullable="true" />
+  </ComplexType>
+  <EntityType Name="Files3">
+    <Key>
+      <PropertyRef Name="Applicant_Id" />
+    </Key>
+    <Property Name="Applicant_Id" Type="Int32" Nullable="false" />
+    <Property Name="Photo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Aadhar_Card" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="SSC_MarkSheet" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="HSC_Marksheet" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Degree_Marksheet" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Community_Certificate" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Nativity_Certificate" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Income_Certificate" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Applicant_Details" Relationship="NationModel.Ap6_fk" FromRole="Files3" ToRole="Applicant_Details" />
+  </EntityType>
+  <Association Name="Ap6_fk">
+    <End Type="NationModel.Applicant_Details" Role="Applicant_Details" Multiplicity="1" />
+    <End Type="NationModel.Files3" Role="Files3" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Applicant_Details">
+        <PropertyRef Name="Applicant_Id" />
+      </Principal>
+      <Dependent Role="Files3">
+        <PropertyRef Name="Applicant_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <ComplexType Name="verifiedapp_Result">
+    <Property Type="Int32" Name="Applicant_Id" Nullable="false" />
+    <Property Type="String" Name="First_Name" Nullable="false" />
+    <Property Type="String" Name="Last_Name" Nullable="false" />
+    <Property Type="DateTime" Name="Date_Of_Birth" Nullable="false" />
+    <Property Type="String" Name="Aadhar_Number" Nullable="false" MaxLength="50" />
+    <Property Type="Int32" Name="Scheme_Id" Nullable="true" />
+    <Property Type="String" Name="Economic_Backward_Class" Nullable="false" MaxLength="5" />
+    <Property Type="String" Name="Economic_Backward_Class_Cert" Nullable="false" />
+    <Property Type="String" Name="Father_Name" Nullable="false" />
+    <Property Type="String" Name="Mother_Name" Nullable="false" />
+    <Property Type="Decimal" Name="Annual_Income" Nullable="false" Precision="19" />
+    <Property Type="String" Name="Income_Certificate_No" Nullable="false" />
+    <Property Type="String" Name="Address" Nullable="false" />
+    <Property Type="String" Name="Gender" Nullable="false" MaxLength="25" />
+    <Property Type="String" Name="Religion" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Caste" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="Disability" Nullable="false" MaxLength="1" />
+    <Property Type="String" Name="Present_Course" Nullable="false" />
+    <Property Type="Int32" Name="Course_Period" Nullable="false" />
+    <Property Type="String" Name="Mode_Of_Study" Nullable="false" />
+    <Property Type="DateTime" Name="Course_Start_Date" Nullable="false" />
+    <Property Type="String" Name="Institution_Name" Nullable="false" />
+    <Property Type="Int32" Name="Degree_Percentage" Nullable="false" />
+    <Property Type="Int32" Name="Roll_No" Nullable="false" />
+    <Property Type="Int32" Name="Marks_Percentage" Nullable="false" />
+    <Property Type="Int32" Name="sscRoll_No" Nullable="false" />
+    <Property Type="Int32" Name="sscMarks_Percentage" Nullable="false" />
+    <Property Type="Int32" Name="MAT_SAT_Rollno" Nullable="false" />
+    <Property Type="Int32" Name="MAT_SAT_Score" Nullable="true" />
+    <Property Type="Int32" Name="Eighth_class_per" Nullable="true" />
+    <Property Type="Int32" Name="Nineth_class_per" Nullable="true" />
+    <Property Type="Int32" Name="Eleventh_class_per" Nullable="true" />
+    <Property Type="DateTime" Name="Date_of_apply" Nullable="false" />
+    <Property Type="String" Name="Smart_Card_Id" Nullable="false" />
+    <Property Type="String" Name="Acc_No" Nullable="false" />
+    <Property Type="String" Name="Bank_name" Nullable="false" />
+    <Property Type="String" Name="IFSC_CODE" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="viewapp_Result">
+    <Property Type="Int32" Name="Applicant_Id" Nullable="false" />
+    <Property Type="String" Name="First_Name" Nullable="false" />
+    <Property Type="String" Name="Last_Name" Nullable="false" />
+    <Property Type="DateTime" Name="Date_Of_Birth" Nullable="false" />
+    <Property Type="String" Name="Aadhar_Number" Nullable="false" MaxLength="50" />
+    <Property Type="Int32" Name="Scheme_Id" Nullable="true" />
+    <Property Type="String" Name="Economic_Backward_Class" Nullable="false" MaxLength="5" />
+    <Property Type="String" Name="Economic_Backward_Class_Cert" Nullable="false" />
+    <Property Type="String" Name="Father_Name" Nullable="false" />
+    <Property Type="String" Name="Mother_Name" Nullable="false" />
+    <Property Type="Decimal" Name="Annual_Income" Nullable="false" Precision="19" />
+    <Property Type="String" Name="Income_Certificate_No" Nullable="false" />
+    <Property Type="String" Name="Address" Nullable="false" />
+    <Property Type="String" Name="Gender" Nullable="false" MaxLength="25" />
+    <Property Type="String" Name="Religion" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Caste" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="Disability" Nullable="false" MaxLength="1" />
+    <Property Type="String" Name="Present_Course" Nullable="false" />
+    <Property Type="Int32" Name="Course_Period" Nullable="false" />
+    <Property Type="String" Name="Mode_Of_Study" Nullable="false" />
+    <Property Type="DateTime" Name="Course_Start_Date" Nullable="false" />
+    <Property Type="String" Name="Institution_Name" Nullable="false" />
+    <Property Type="Int32" Name="Degree_Percentage" Nullable="false" />
+    <Property Type="Int32" Name="Roll_No" Nullable="false" />
+    <Property Type="Int32" Name="Marks_Percentage" Nullable="false" />
+    <Property Type="Int32" Name="sscRoll_No" Nullable="false" />
+    <Property Type="Int32" Name="sscMarks_Percentage" Nullable="false" />
+    <Property Type="Int32" Name="MAT_SAT_Rollno" Nullable="false" />
+    <Property Type="Int32" Name="MAT_SAT_Score" Nullable="true" />
+    <Property Type="Int32" Name="Eighth_class_per" Nullable="true" />
+    <Property Type="Int32" Name="Nineth_class_per" Nullable="true" />
+    <Property Type="Int32" Name="Eleventh_class_per" Nullable="true" />
+    <Property Type="DateTime" Name="Date_of_apply" Nullable="false" />
+    <Property Type="String" Name="Smart_Card_Id" Nullable="false" />
+    <Property Type="String" Name="Acc_No" Nullable="false" />
+    <Property Type="String" Name="Bank_name" Nullable="false" />
+    <Property Type="String" Name="IFSC_CODE" Nullable="false" />
+    <Property Type="String" Name="Photo" Nullable="true" />
+    <Property Type="String" Name="Aadhar_Card" Nullable="true" />
+    <Property Type="String" Name="Community_Certificate" Nullable="true" />
+    <Property Type="String" Name="Degree_Marksheet" Nullable="true" />
+    <Property Type="String" Name="HSC_Marksheet" Nullable="true" />
+    <Property Type="String" Name="SSC_MarkSheet" Nullable="true" />
+    <Property Type="String" Name="Nativity_Certificate" Nullable="true" />
+    <Property Type="String" Name="Income_Certificate" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="viewappl_Result">
+    <Property Type="Int32" Name="Applicant_Id" Nullable="false" />
+    <Property Type="String" Name="First_Name" Nullable="false" />
+    <Property Type="String" Name="Last_Name" Nullable="false" />
+    <Property Type="DateTime" Name="Date_Of_Birth" Nullable="false" />
+    <Property Type="String" Name="Aadhar_Number" Nullable="false" MaxLength="50" />
+    <Property Type="Int32" Name="Scheme_Id" Nullable="true" />
+    <Property Type="String" Name="Economic_Backward_Class" Nullable="false" MaxLength="5" />
+    <Property Type="String" Name="Economic_Backward_Class_Cert" Nullable="false" />
+    <Property Type="String" Name="Father_Name" Nullable="false" />
+    <Property Type="String" Name="Mother_Name" Nullable="false" />
+    <Property Type="Decimal" Name="Annual_Income" Nullable="false" Precision="19" />
+    <Property Type="String" Name="Income_Certificate_No" Nullable="false" />
+    <Property Type="String" Name="Address" Nullable="false" />
+    <Property Type="String" Name="Gender" Nullable="false" MaxLength="25" />
+    <Property Type="String" Name="Religion" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Caste" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="Disability" Nullable="false" MaxLength="1" />
+    <Property Type="String" Name="Present_Course" Nullable="false" />
+    <Property Type="Int32" Name="Course_Period" Nullable="false" />
+    <Property Type="String" Name="Mode_Of_Study" Nullable="false" />
+    <Property Type="DateTime" Name="Course_Start_Date" Nullable="false" />
+    <Property Type="String" Name="Institution_Name" Nullable="false" />
+    <Property Type="Int32" Name="Degree_Percentage" Nullable="false" />
+    <Property Type="Int32" Name="Roll_No" Nullable="false" />
+    <Property Type="Int32" Name="Marks_Percentage" Nullable="false" />
+    <Property Type="Int32" Name="sscRoll_No" Nullable="false" />
+    <Property Type="Int32" Name="sscMarks_Percentage" Nullable="false" />
+    <Property Type="DateTime" Name="Date_of_apply" Nullable="false" />
+    <Property Type="String" Name="Smart_Card_Id" Nullable="false" />
+    <Property Type="String" Name="Acc_No" Nullable="false" />
+    <Property Type="String" Name="Bank_name" Nullable="false" />
+    <Property Type="String" Name="IFSC_CODE" Nullable="false" />
+    <Property Type="String" Name="Photo" Nullable="true" />
+    <Property Type="String" Name="Aadhar_Card" Nullable="true" />
+    <Property Type="String" Name="Community_Certificate" Nullable="true" />
+    <Property Type="String" Name="Degree_Marksheet" Nullable="true" />
+    <Property Type="String" Name="HSC_Marksheet" Nullable="true" />
+    <Property Type="String" Name="SSC_MarkSheet" Nullable="true" />
+    <Property Type="String" Name="Nativity_Certificate" Nullable="true" />
+    <Property Type="String" Name="Income_Certificate" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="verifiedappl_Result">
+    <Property Type="Int32" Name="Applicant_Id" Nullable="false" />
+    <Property Type="String" Name="First_Name" Nullable="false" />
+    <Property Type="String" Name="Last_Name" Nullable="false" />
+    <Property Type="DateTime" Name="Date_Of_Birth" Nullable="false" />
+    <Property Type="String" Name="Aadhar_Number" Nullable="false" MaxLength="50" />
+    <Property Type="Int32" Name="Scheme_Id" Nullable="true" />
+    <Property Type="String" Name="Economic_Backward_Class" Nullable="false" MaxLength="5" />
+    <Property Type="String" Name="Economic_Backward_Class_Cert" Nullable="false" />
+    <Property Type="String" Name="Father_Name" Nullable="false" />
+    <Property Type="String" Name="Mother_Name" Nullable="false" />
+    <Property Type="Decimal" Name="Annual_Income" Nullable="false" Precision="19" />
+    <Property Type="String" Name="Income_Certificate_No" Nullable="false" />
+    <Property Type="String" Name="Address" Nullable="false" />
+    <Property Type="String" Name="Gender" Nullable="false" MaxLength="25" />
+    <Property Type="String" Name="Religion" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Caste" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="Disability" Nullable="false" MaxLength="1" />
+    <Property Type="String" Name="Present_Course" Nullable="false" />
+    <Property Type="Int32" Name="Course_Period" Nullable="false" />
+    <Property Type="String" Name="Mode_Of_Study" Nullable="false" />
+    <Property Type="DateTime" Name="Course_Start_Date" Nullable="false" />
+    <Property Type="String" Name="Institution_Name" Nullable="false" />
+    <Property Type="Int32" Name="Degree_Percentage" Nullable="false" />
+    <Property Type="Int32" Name="Roll_No" Nullable="false" />
+    <Property Type="Int32" Name="Marks_Percentage" Nullable="false" />
+    <Property Type="Int32" Name="sscRoll_No" Nullable="false" />
+    <Property Type="Int32" Name="sscMarks_Percentage" Nullable="false" />
+    <Property Type="DateTime" Name="Date_of_apply" Nullable="false" />
+    <Property Type="String" Name="Smart_Card_Id" Nullable="false" />
+    <Property Type="String" Name="Acc_No" Nullable="false" />
+    <Property Type="String" Name="Bank_name" Nullable="false" />
+    <Property Type="String" Name="IFSC_CODE" Nullable="false" />
+  </ComplexType>
+</Schema>

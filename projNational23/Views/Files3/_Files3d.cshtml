@@ -1,0 +1,87 @@
+﻿@model projNational23.Files3
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Studlayout.cshtml";
+}
+<div>
+  
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Photo)
+        </dt>
+
+        <dd>
+            <img src="@Url.Content(Model.Photo)" height="150" width="150" />
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Aadhar_Card)
+        </dt>
+
+        <dd>
+            <img src="@Url.Content(Model.Aadhar_Card)" height="150" width="150" />
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SSC_MarkSheet)
+        </dt>
+
+        <dd>
+            <img src="@Url.Content(Model.SSC_MarkSheet)" height="150" width="150" />
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HSC_Marksheet)
+        </dt>
+
+        <dd>
+            <img src="@Url.Content(Model.HSC_Marksheet)" height="150" width="150" />
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Degree_Marksheet)
+        </dt>
+
+        <dd>
+            <img src="@Url.Content(Model.Degree_Marksheet)" height="150" width="150" />
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Community_Certificate)
+        </dt>
+
+        <dd>
+            <img src="@Url.Content(Model.Community_Certificate)" height="150" width="150" />
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nativity_Certificate)
+        </dt>
+
+        <dd>
+            <img src="@Url.Content(Model.Income_Certificate)" height="150" width="150" />
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Income_Certificate)
+        </dt>
+
+        <dd>
+            <img src="@Url.Content(Model.Income_Certificate)" height="150" width="150" />
+        </dd>
+
+        @*<dt>
+            @Html.DisplayNameFor(model => model.Applicant_Details.Login_Id)
+        </dt>
+
+        <dd>
+            <img src="@Url.Content(Model.)" height="150" width="150" />
+        </dd>*@
+
+    </dl>
+</div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+

@@ -1,0 +1,36 @@
+﻿@model projNational23.AcademicSSC_Details
+
+<div>
+    <h4>Academic SSC Details</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.sscMarks_Percentage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sscMarks_Percentage)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.sscBoard)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sscBoard)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.sscYear_Of_Passing)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sscYear_Of_Passing)
+        </dd>
+
+    </dl>
+</div>
+@section scripts
+{
+    @Scripts.Render("~/bundles/jqueryval")
+}

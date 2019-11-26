@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="a6abc48b953446159bf2cd7a91552e76" Name="Diagram1">
+        <EntityTypeShape EntityType="NationModel.Academic_Details" Width="1.5" PointX="8.25" PointY="10.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="NationModel.AcademicHSC_Details" Width="1.5" PointX="8.25" PointY="14.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="NationModel.AcademicSSC_Details" Width="1.5" PointX="8.25" PointY="18" IsExpanded="true" />
+        <EntityTypeShape EntityType="NationModel.Admin_Details" Width="1.5" PointX="8.25" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="NationModel.Applicant_Details" Width="1.5" PointX="5.25" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="NationModel.Caste_Details" Width="1.5" PointX="0.75" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="NationModel.Economic_Backward_Class_Details" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NationModel.Gender_Details" Width="1.5" PointX="0.75" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="NationModel.Login_Details" Width="1.5" PointX="3" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="NationModel.NationalEdu_Details" Width="1.5" PointX="8.25" PointY="20.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NationModel.Qualification_Details" Width="1.5" PointX="0.75" PointY="12" IsExpanded="true" />
+        <EntityTypeShape EntityType="NationModel.REG_Number" Width="1.5" PointX="10.5" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NationModel.RegScheme_details" Width="1.5" PointX="10.5" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="NationModel.Scheme_Details" Width="1.5" PointX="3" PointY="5.25" IsExpanded="true" />
+        <AssociationConnector Association="NationModel.reg_fk" ManuallyRouted="false" />
+        <AssociationConnector Association="NationModel.hs_fk" ManuallyRouted="false" />
+        <AssociationConnector Association="NationModel.ss_fk" ManuallyRouted="false" />
+        <AssociationConnector Association="NationModel.ad_fk" ManuallyRouted="false" />
+        <AssociationConnector Association="NationModel.Lg_fk" ManuallyRouted="false" />
+        <AssociationConnector Association="NationModel.ap_fk" ManuallyRouted="false" />
+        <AssociationConnector Association="NationModel.app_fk" ManuallyRouted="false" />
+        <AssociationConnector Association="NationModel.Lg1_fk" ManuallyRouted="false" />
+        <AssociationConnector Association="NationModel.sc_fk" ManuallyRouted="false" />
+        <AssociationConnector Association="NationModel.Cs_fk" ManuallyRouted="false" />
+        <AssociationConnector Association="NationModel.FK__Scheme_De__Econo__1FCDBCEB" ManuallyRouted="false" />
+        <AssociationConnector Association="NationModel.FK__Scheme_De__Gende__20C1E124" ManuallyRouted="false" />
+        <AssociationConnector Association="NationModel.mat_fk" ManuallyRouted="false" />
+        <AssociationConnector Association="NationModel.Q_fk" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="NationModel.Files3" Width="1.5" PointX="7.5" PointY="34.125" />
+        <AssociationConnector Association="NationModel.Ap6_fk" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

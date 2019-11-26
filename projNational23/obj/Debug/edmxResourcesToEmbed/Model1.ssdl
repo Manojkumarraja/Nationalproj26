@@ -1,0 +1,538 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="NationModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Academic_Details">
+    <Key>
+      <PropertyRef Name="Register_No" />
+    </Key>
+    <Property Name="Register_No" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Present_Course" Type="varchar(max)" Nullable="false" />
+    <Property Name="Course_Period" Type="int" Nullable="false" />
+    <Property Name="Mode_Of_Study" Type="varchar(max)" Nullable="false" />
+    <Property Name="Course_Start_Date" Type="date" Nullable="false" />
+    <Property Name="Institution_Name" Type="varchar(max)" Nullable="false" />
+    <Property Name="University_Name" Type="varchar(max)" Nullable="false" />
+    <Property Name="Previous_Course" Type="varchar(max)" Nullable="false" />
+    <Property Name="Degree_Percentage" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AcademicHSC_Details">
+    <Key>
+      <PropertyRef Name="Roll_No" />
+    </Key>
+    <Property Name="Roll_No" Type="int" Nullable="false" />
+    <Property Name="Marks_Percentage" Type="int" Nullable="false" />
+    <Property Name="Specialization" Type="varchar(max)" Nullable="false" />
+    <Property Name="Board" Type="varchar(max)" Nullable="false" />
+    <Property Name="Year_Of_Passing" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AcademicSSC_Details">
+    <Key>
+      <PropertyRef Name="sscRoll_No" />
+    </Key>
+    <Property Name="sscRoll_No" Type="int" Nullable="false" />
+    <Property Name="sscMarks_Percentage" Type="int" Nullable="false" />
+    <Property Name="sscBoard" Type="varchar(max)" Nullable="false" />
+    <Property Name="sscYear_Of_Passing" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Admin_Details">
+    <Key>
+      <PropertyRef Name="Admin_Id" />
+    </Key>
+    <Property Name="Admin_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Login_Id" Type="varchar" MaxLength="15" />
+    <Property Name="Name" Type="varchar(max)" Nullable="false" />
+    <Property Name="Designation" Type="varchar(max)" Nullable="false" />
+    <Property Name="Contact_Number" Type="varchar(max)" Nullable="false" />
+    <Property Name="Address" Type="varchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Applicant_Details">
+    <Key>
+      <PropertyRef Name="Applicant_Id" />
+    </Key>
+    <Property Name="Applicant_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Login_Id" Type="varchar" MaxLength="15" />
+    <Property Name="First_Name" Type="varchar(max)" Nullable="false" />
+    <Property Name="Last_Name" Type="varchar(max)" Nullable="false" />
+    <Property Name="Date_Of_Birth" Type="date" Nullable="false" />
+    <Property Name="Aadhar_Number" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Gender" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="Religion" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Caste" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Scheme_Id" Type="int" />
+    <Property Name="Marital_Status" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Economic_Backward_Class" Type="varchar" MaxLength="5" Nullable="false" />
+    <Property Name="Economic_Backward_Class_Cert" Type="varchar(max)" Nullable="false" />
+    <Property Name="Father_Name" Type="varchar(max)" Nullable="false" />
+    <Property Name="Mother_Name" Type="varchar(max)" Nullable="false" />
+    <Property Name="Annual_Income" Type="money" Nullable="false" />
+    <Property Name="Income_Certificate_No" Type="varchar(max)" Nullable="false" />
+    <Property Name="State" Type="varchar(max)" Nullable="false" />
+    <Property Name="City" Type="varchar(max)" Nullable="false" />
+    <Property Name="Address" Type="varchar(max)" Nullable="false" />
+    <Property Name="Qualification" Type="varchar" MaxLength="5" Nullable="false" />
+    <Property Name="Phone_Number" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Disability" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="Disabilty_Desc" Type="varchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Caste_Details">
+    <Key>
+      <PropertyRef Name="Caste_Id" />
+    </Key>
+    <Property Name="Caste_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Caste1" Type="varchar" MaxLength="5" Nullable="false" />
+    <Property Name="Caste2" Type="varchar" MaxLength="5" Nullable="false" />
+    <Property Name="Caste3" Type="varchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Economic_Backward_Class_Details">
+    <Key>
+      <PropertyRef Name="Ec_Id" />
+    </Key>
+    <Property Name="Ec_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Condition_1" Type="varchar" MaxLength="5" />
+    <Property Name="condition_2" Type="varchar" MaxLength="5" />
+  </EntityType>
+  <EntityType Name="Files3">
+    <Key>
+      <PropertyRef Name="Applicant_Id" />
+    </Key>
+    <Property Name="Applicant_Id" Type="int" Nullable="false" />
+    <Property Name="Photo" Type="varchar(max)" />
+    <Property Name="Aadhar_Card" Type="varchar(max)" />
+    <Property Name="SSC_MarkSheet" Type="varchar(max)" />
+    <Property Name="HSC_Marksheet" Type="varchar(max)" />
+    <Property Name="Degree_Marksheet" Type="varchar(max)" />
+    <Property Name="Community_Certificate" Type="varchar(max)" />
+    <Property Name="Nativity_Certificate" Type="varchar(max)" />
+    <Property Name="Income_Certificate" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="Gender_Details">
+    <Key>
+      <PropertyRef Name="Gen_Id" />
+    </Key>
+    <Property Name="Gen_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="gender_1" Type="varchar" MaxLength="5" />
+    <Property Name="gender_2" Type="varchar" MaxLength="10" />
+    <Property Name="gender_3" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="Login_Details">
+    <Key>
+      <PropertyRef Name="Login_Id" />
+    </Key>
+    <Property Name="Login_Id" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="Name" Type="varchar(max)" Nullable="false" />
+    <Property Name="Password" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Email_Id" Type="varchar(max)" Nullable="false" />
+    <Property Name="User_Type" Type="char" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="NationalEdu_Details">
+    <Key>
+      <PropertyRef Name="MAT_SAT_Rollno" />
+    </Key>
+    <Property Name="MAT_SAT_Rollno" Type="int" Nullable="false" />
+    <Property Name="MAT_SAT_Score" Type="int" />
+    <Property Name="Eighth_class_per" Type="int" />
+    <Property Name="Nineth_class_per" Type="int" />
+    <Property Name="Eleventh_class_per" Type="int" />
+    <Property Name="Eleventh_specialization" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="Qualification_Details">
+    <Key>
+      <PropertyRef Name="Qualification_Id" />
+    </Key>
+    <Property Name="Qualification_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Qualification1" Type="varchar" MaxLength="5" Nullable="false" />
+    <Property Name="Qualification2" Type="varchar" MaxLength="5" Nullable="false" />
+  </EntityType>
+  <EntityType Name="REG_Number">
+    <Key>
+      <PropertyRef Name="Applicant_Id" />
+    </Key>
+    <Property Name="Applicant_Id" Type="int" Nullable="false" />
+    <Property Name="Register_Number" Type="varchar" MaxLength="20" />
+    <Property Name="Hsc_Rollno" Type="int" />
+    <Property Name="Ssc_Rollno" Type="int" />
+    <Property Name="MAT_SAT_Rollno" Type="int" />
+  </EntityType>
+  <EntityType Name="RegScheme_details">
+    <Key>
+      <PropertyRef Name="Applicant_ID" />
+    </Key>
+    <Property Name="Applicant_ID" Type="int" Nullable="false" />
+    <Property Name="Admin_Id" Type="int" />
+    <Property Name="Date_of_apply" Type="date" Nullable="false" />
+    <Property Name="Smart_Card_Id" Type="varchar(max)" Nullable="false" />
+    <Property Name="App_status" Type="varchar(max)" />
+    <Property Name="Acc_No" Type="varchar(max)" Nullable="false" />
+    <Property Name="Bank_name" Type="varchar(max)" Nullable="false" />
+    <Property Name="IFSC_CODE" Type="varchar(max)" Nullable="false" />
+    <Property Name="Payment_Status" Type="varchar(max)" />
+    <Property Name="Funded_amt" Type="money" />
+    <Property Name="Fund_transfer_date" Type="date" />
+  </EntityType>
+  <EntityType Name="Scheme_Details">
+    <Key>
+      <PropertyRef Name="Scheme_Id" />
+    </Key>
+    <Property Name="Scheme_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Scheme_Type" Type="varchar(max)" Nullable="false" />
+    <Property Name="Scheme_Name" Type="varchar(max)" Nullable="false" />
+    <Property Name="Scholarship_Amount" Type="money" Nullable="false" />
+    <Property Name="Age_Criteria" Type="int" Nullable="false" />
+    <Property Name="Marks_Criteria" Type="int" Nullable="false" />
+    <Property Name="Caste" Type="int" />
+    <Property Name="Annual_Income" Type="money" Nullable="false" />
+    <Property Name="Qualification_Criteria" Type="int" />
+    <Property Name="Economically_Backward_Classes" Type="int" Nullable="false" />
+    <Property Name="Gender_Id" Type="int" />
+  </EntityType>
+  <Association Name="ad_fk">
+    <End Role="Admin_Details" Type="Self.Admin_Details" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="RegScheme_details" Type="Self.RegScheme_details" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Admin_Details">
+        <PropertyRef Name="Admin_Id" />
+      </Principal>
+      <Dependent Role="RegScheme_details">
+        <PropertyRef Name="Admin_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ap_fk">
+    <End Role="Applicant_Details" Type="Self.Applicant_Details" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="RegScheme_details" Type="Self.RegScheme_details" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Applicant_Details">
+        <PropertyRef Name="Applicant_Id" />
+      </Principal>
+      <Dependent Role="RegScheme_details">
+        <PropertyRef Name="Applicant_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Ap6_fk">
+    <End Role="Applicant_Details" Type="Self.Applicant_Details" Multiplicity="1" />
+    <End Role="Files3" Type="Self.Files3" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Applicant_Details">
+        <PropertyRef Name="Applicant_Id" />
+      </Principal>
+      <Dependent Role="Files3">
+        <PropertyRef Name="Applicant_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="app_fk">
+    <End Role="Applicant_Details" Type="Self.Applicant_Details" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="REG_Number" Type="Self.REG_Number" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Applicant_Details">
+        <PropertyRef Name="Applicant_Id" />
+      </Principal>
+      <Dependent Role="REG_Number">
+        <PropertyRef Name="Applicant_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Cs_fk">
+    <End Role="Caste_Details" Type="Self.Caste_Details" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Scheme_Details" Type="Self.Scheme_Details" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Caste_Details">
+        <PropertyRef Name="Caste_Id" />
+      </Principal>
+      <Dependent Role="Scheme_Details">
+        <PropertyRef Name="Caste" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Scheme_De__Econo__1FCDBCEB">
+    <End Role="Economic_Backward_Class_Details" Type="Self.Economic_Backward_Class_Details" Multiplicity="1" />
+    <End Role="Scheme_Details" Type="Self.Scheme_Details" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Economic_Backward_Class_Details">
+        <PropertyRef Name="Ec_Id" />
+      </Principal>
+      <Dependent Role="Scheme_Details">
+        <PropertyRef Name="Economically_Backward_Classes" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Scheme_De__Gende__20C1E124">
+    <End Role="Gender_Details" Type="Self.Gender_Details" Multiplicity="0..1" />
+    <End Role="Scheme_Details" Type="Self.Scheme_Details" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Gender_Details">
+        <PropertyRef Name="Gen_Id" />
+      </Principal>
+      <Dependent Role="Scheme_Details">
+        <PropertyRef Name="Gender_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="hs_fk">
+    <End Role="AcademicHSC_Details" Type="Self.AcademicHSC_Details" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="REG_Number" Type="Self.REG_Number" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AcademicHSC_Details">
+        <PropertyRef Name="Roll_No" />
+      </Principal>
+      <Dependent Role="REG_Number">
+        <PropertyRef Name="Hsc_Rollno" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Lg_fk">
+    <End Role="Login_Details" Type="Self.Login_Details" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Admin_Details" Type="Self.Admin_Details" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Login_Details">
+        <PropertyRef Name="Login_Id" />
+      </Principal>
+      <Dependent Role="Admin_Details">
+        <PropertyRef Name="Login_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Lg1_fk">
+    <End Role="Login_Details" Type="Self.Login_Details" Multiplicity="0..1" />
+    <End Role="Applicant_Details" Type="Self.Applicant_Details" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Login_Details">
+        <PropertyRef Name="Login_Id" />
+      </Principal>
+      <Dependent Role="Applicant_Details">
+        <PropertyRef Name="Login_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="mat_fk">
+    <End Role="NationalEdu_Details" Type="Self.NationalEdu_Details" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="REG_Number" Type="Self.REG_Number" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NationalEdu_Details">
+        <PropertyRef Name="MAT_SAT_Rollno" />
+      </Principal>
+      <Dependent Role="REG_Number">
+        <PropertyRef Name="MAT_SAT_Rollno" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Q_fk">
+    <End Role="Qualification_Details" Type="Self.Qualification_Details" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Scheme_Details" Type="Self.Scheme_Details" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Qualification_Details">
+        <PropertyRef Name="Qualification_Id" />
+      </Principal>
+      <Dependent Role="Scheme_Details">
+        <PropertyRef Name="Qualification_Criteria" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="reg_fk">
+    <End Role="Academic_Details" Type="Self.Academic_Details" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="REG_Number" Type="Self.REG_Number" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Academic_Details">
+        <PropertyRef Name="Register_No" />
+      </Principal>
+      <Dependent Role="REG_Number">
+        <PropertyRef Name="Register_Number" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="sc_fk">
+    <End Role="Scheme_Details" Type="Self.Scheme_Details" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Applicant_Details" Type="Self.Applicant_Details" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Scheme_Details">
+        <PropertyRef Name="Scheme_Id" />
+      </Principal>
+      <Dependent Role="Applicant_Details">
+        <PropertyRef Name="Scheme_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ss_fk">
+    <End Role="AcademicSSC_Details" Type="Self.AcademicSSC_Details" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="REG_Number" Type="Self.REG_Number" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AcademicSSC_Details">
+        <PropertyRef Name="sscRoll_No" />
+      </Principal>
+      <Dependent Role="REG_Number">
+        <PropertyRef Name="Ssc_Rollno" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="adminview" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="Nat" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MatRoll" Type="int" Mode="In" />
+    <Parameter Name="MatMark" Type="int" Mode="In" />
+    <Parameter Name="p8cls" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Nat11" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="p11cls" Type="int" Mode="In" />
+    <Parameter Name="p11special" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="Nat111" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="natroll" Type="int" Mode="In" />
+    <Parameter Name="p11cls" Type="int" Mode="In" />
+    <Parameter Name="spec" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="Nat9" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="p9cls" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Nat99" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="natroll" Type="int" Mode="In" />
+    <Parameter Name="p9cls" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Regdeg" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="App_id" Type="int" Mode="In" />
+    <Parameter Name="regnum" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="Reghsc" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="App_id" Type="int" Mode="In" />
+    <Parameter Name="Rollnum" Type="int" Mode="In" />
+  </Function>
+  <Function Name="RegNatt" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="App_id" Type="int" Mode="In" />
+    <Parameter Name="Nat" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Regschadminn" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="AppId" Type="int" Mode="In" />
+    <Parameter Name="AppStatus" Type="varchar(max)" Mode="In" />
+    <Parameter Name="PaymentStatus" Type="varchar(max)" Mode="In" />
+    <Parameter Name="Fundedamt" Type="money" Mode="In" />
+    <Parameter Name="Funddate" Type="date" Mode="In" />
+  </Function>
+  <Function Name="RegSchAdRej" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="AppId" Type="int" Mode="In" />
+    <Parameter Name="AppStatus" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="Regscheme" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Applicant_Id" Type="int" Mode="In" />
+    <Parameter Name="Date_of_apply" Type="date" Mode="In" />
+    <Parameter Name="Smart_Card_Id" Type="varchar(max)" Mode="In" />
+    <Parameter Name="Acc_No" Type="varchar(max)" Mode="In" />
+    <Parameter Name="Bank_name" Type="varchar(max)" Mode="In" />
+    <Parameter Name="IFSC_CODE" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="RegschemeAD" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Admin_Id" Type="int" Mode="In" />
+    <Parameter Name="App_status" Type="varchar(max)" Mode="In" />
+    <Parameter Name="Payment_Status" Type="varchar(max)" Mode="In" />
+    <Parameter Name="Funded_amt" Type="money" Mode="In" />
+    <Parameter Name="Fund_transfer_date" Type="date" Mode="In" />
+  </Function>
+  <Function Name="Regschstud" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="AppId" Type="int" Mode="In" />
+    <Parameter Name="AppStatus" Type="varchar(max)" Mode="In" />
+    <Parameter Name="PaymentStatus" Type="varchar(max)" Mode="In" />
+    <Parameter Name="Fundedamt" Type="money" Mode="In" />
+  </Function>
+  <Function Name="Regssc" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="App_id" Type="int" Mode="In" />
+    <Parameter Name="Rollnum" Type="int" Mode="In" />
+  </Function>
+  <Function Name="verifiedappl" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="viewappl" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <EntityContainer Name="NationModelStoreContainer">
+    <EntitySet Name="Academic_Details" EntityType="Self.Academic_Details" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AcademicHSC_Details" EntityType="Self.AcademicHSC_Details" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AcademicSSC_Details" EntityType="Self.AcademicSSC_Details" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Admin_Details" EntityType="Self.Admin_Details" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Applicant_Details" EntityType="Self.Applicant_Details" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Caste_Details" EntityType="Self.Caste_Details" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Economic_Backward_Class_Details" EntityType="Self.Economic_Backward_Class_Details" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Files3" EntityType="Self.Files3" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Gender_Details" EntityType="Self.Gender_Details" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Login_Details" EntityType="Self.Login_Details" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NationalEdu_Details" EntityType="Self.NationalEdu_Details" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Qualification_Details" EntityType="Self.Qualification_Details" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="REG_Number" EntityType="Self.REG_Number" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RegScheme_details" EntityType="Self.RegScheme_details" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Scheme_Details" EntityType="Self.Scheme_Details" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="ad_fk" Association="Self.ad_fk">
+      <End Role="Admin_Details" EntitySet="Admin_Details" />
+      <End Role="RegScheme_details" EntitySet="RegScheme_details" />
+    </AssociationSet>
+    <AssociationSet Name="ap_fk" Association="Self.ap_fk">
+      <End Role="Applicant_Details" EntitySet="Applicant_Details" />
+      <End Role="RegScheme_details" EntitySet="RegScheme_details" />
+    </AssociationSet>
+    <AssociationSet Name="Ap6_fk" Association="Self.Ap6_fk">
+      <End Role="Applicant_Details" EntitySet="Applicant_Details" />
+      <End Role="Files3" EntitySet="Files3" />
+    </AssociationSet>
+    <AssociationSet Name="app_fk" Association="Self.app_fk">
+      <End Role="Applicant_Details" EntitySet="Applicant_Details" />
+      <End Role="REG_Number" EntitySet="REG_Number" />
+    </AssociationSet>
+    <AssociationSet Name="Cs_fk" Association="Self.Cs_fk">
+      <End Role="Caste_Details" EntitySet="Caste_Details" />
+      <End Role="Scheme_Details" EntitySet="Scheme_Details" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Scheme_De__Econo__1FCDBCEB" Association="Self.FK__Scheme_De__Econo__1FCDBCEB">
+      <End Role="Economic_Backward_Class_Details" EntitySet="Economic_Backward_Class_Details" />
+      <End Role="Scheme_Details" EntitySet="Scheme_Details" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Scheme_De__Gende__20C1E124" Association="Self.FK__Scheme_De__Gende__20C1E124">
+      <End Role="Gender_Details" EntitySet="Gender_Details" />
+      <End Role="Scheme_Details" EntitySet="Scheme_Details" />
+    </AssociationSet>
+    <AssociationSet Name="hs_fk" Association="Self.hs_fk">
+      <End Role="AcademicHSC_Details" EntitySet="AcademicHSC_Details" />
+      <End Role="REG_Number" EntitySet="REG_Number" />
+    </AssociationSet>
+    <AssociationSet Name="Lg_fk" Association="Self.Lg_fk">
+      <End Role="Login_Details" EntitySet="Login_Details" />
+      <End Role="Admin_Details" EntitySet="Admin_Details" />
+    </AssociationSet>
+    <AssociationSet Name="Lg1_fk" Association="Self.Lg1_fk">
+      <End Role="Login_Details" EntitySet="Login_Details" />
+      <End Role="Applicant_Details" EntitySet="Applicant_Details" />
+    </AssociationSet>
+    <AssociationSet Name="mat_fk" Association="Self.mat_fk">
+      <End Role="NationalEdu_Details" EntitySet="NationalEdu_Details" />
+      <End Role="REG_Number" EntitySet="REG_Number" />
+    </AssociationSet>
+    <AssociationSet Name="Q_fk" Association="Self.Q_fk">
+      <End Role="Qualification_Details" EntitySet="Qualification_Details" />
+      <End Role="Scheme_Details" EntitySet="Scheme_Details" />
+    </AssociationSet>
+    <AssociationSet Name="reg_fk" Association="Self.reg_fk">
+      <End Role="Academic_Details" EntitySet="Academic_Details" />
+      <End Role="REG_Number" EntitySet="REG_Number" />
+    </AssociationSet>
+    <AssociationSet Name="sc_fk" Association="Self.sc_fk">
+      <End Role="Scheme_Details" EntitySet="Scheme_Details" />
+      <End Role="Applicant_Details" EntitySet="Applicant_Details" />
+    </AssociationSet>
+    <AssociationSet Name="ss_fk" Association="Self.ss_fk">
+      <End Role="AcademicSSC_Details" EntitySet="AcademicSSC_Details" />
+      <End Role="REG_Number" EntitySet="REG_Number" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

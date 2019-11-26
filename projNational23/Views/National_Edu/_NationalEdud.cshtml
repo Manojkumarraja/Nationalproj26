@@ -1,0 +1,60 @@
+﻿@model projNational23.NationalEdu_Details
+@{
+    Layout = "~/Views/Shared/_Studlayout.cshtml";
+}
+<div>
+    <h4>NationalEdu_Details</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.MAT_SAT_Rollno)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MAT_SAT_Rollno)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.MAT_SAT_Score)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MAT_SAT_Score)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Eighth_class_per)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Eighth_class_per)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nineth_class_per)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nineth_class_per)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Eleventh_class_per)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Eleventh_class_per)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Eleventh_specialization)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Eleventh_specialization)
+        </dd>
+
+    </dl>
+</div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

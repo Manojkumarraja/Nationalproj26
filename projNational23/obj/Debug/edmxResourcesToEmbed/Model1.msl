@@ -1,0 +1,357 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="NationModelStoreContainer" CdmEntityContainer="NationEntities">
+    <EntitySetMapping Name="Academic_Details">
+      <EntityTypeMapping TypeName="NationModel.Academic_Details">
+        <MappingFragment StoreEntitySet="Academic_Details">
+          <ScalarProperty Name="Register_No" ColumnName="Register_No" />
+          <ScalarProperty Name="Present_Course" ColumnName="Present_Course" />
+          <ScalarProperty Name="Course_Period" ColumnName="Course_Period" />
+          <ScalarProperty Name="Mode_Of_Study" ColumnName="Mode_Of_Study" />
+          <ScalarProperty Name="Course_Start_Date" ColumnName="Course_Start_Date" />
+          <ScalarProperty Name="Institution_Name" ColumnName="Institution_Name" />
+          <ScalarProperty Name="University_Name" ColumnName="University_Name" />
+          <ScalarProperty Name="Previous_Course" ColumnName="Previous_Course" />
+          <ScalarProperty Name="Degree_Percentage" ColumnName="Degree_Percentage" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AcademicHSC_Details">
+      <EntityTypeMapping TypeName="NationModel.AcademicHSC_Details">
+        <MappingFragment StoreEntitySet="AcademicHSC_Details">
+          <ScalarProperty Name="Roll_No" ColumnName="Roll_No" />
+          <ScalarProperty Name="Marks_Percentage" ColumnName="Marks_Percentage" />
+          <ScalarProperty Name="Specialization" ColumnName="Specialization" />
+          <ScalarProperty Name="Board" ColumnName="Board" />
+          <ScalarProperty Name="Year_Of_Passing" ColumnName="Year_Of_Passing" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AcademicSSC_Details">
+      <EntityTypeMapping TypeName="NationModel.AcademicSSC_Details">
+        <MappingFragment StoreEntitySet="AcademicSSC_Details">
+          <ScalarProperty Name="sscRoll_No" ColumnName="sscRoll_No" />
+          <ScalarProperty Name="sscMarks_Percentage" ColumnName="sscMarks_Percentage" />
+          <ScalarProperty Name="sscBoard" ColumnName="sscBoard" />
+          <ScalarProperty Name="sscYear_Of_Passing" ColumnName="sscYear_Of_Passing" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Admin_Details">
+      <EntityTypeMapping TypeName="NationModel.Admin_Details">
+        <MappingFragment StoreEntitySet="Admin_Details">
+          <ScalarProperty Name="Admin_Id" ColumnName="Admin_Id" />
+          <ScalarProperty Name="Login_Id" ColumnName="Login_Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Designation" ColumnName="Designation" />
+          <ScalarProperty Name="Contact_Number" ColumnName="Contact_Number" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Applicant_Details">
+      <EntityTypeMapping TypeName="NationModel.Applicant_Details">
+        <MappingFragment StoreEntitySet="Applicant_Details">
+          <ScalarProperty Name="Applicant_Id" ColumnName="Applicant_Id" />
+          <ScalarProperty Name="Login_Id" ColumnName="Login_Id" />
+          <ScalarProperty Name="First_Name" ColumnName="First_Name" />
+          <ScalarProperty Name="Last_Name" ColumnName="Last_Name" />
+          <ScalarProperty Name="Date_Of_Birth" ColumnName="Date_Of_Birth" />
+          <ScalarProperty Name="Aadhar_Number" ColumnName="Aadhar_Number" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Religion" ColumnName="Religion" />
+          <ScalarProperty Name="Caste" ColumnName="Caste" />
+          <ScalarProperty Name="Scheme_Id" ColumnName="Scheme_Id" />
+          <ScalarProperty Name="Marital_Status" ColumnName="Marital_Status" />
+          <ScalarProperty Name="Economic_Backward_Class" ColumnName="Economic_Backward_Class" />
+          <ScalarProperty Name="Economic_Backward_Class_Cert" ColumnName="Economic_Backward_Class_Cert" />
+          <ScalarProperty Name="Father_Name" ColumnName="Father_Name" />
+          <ScalarProperty Name="Mother_Name" ColumnName="Mother_Name" />
+          <ScalarProperty Name="Annual_Income" ColumnName="Annual_Income" />
+          <ScalarProperty Name="Income_Certificate_No" ColumnName="Income_Certificate_No" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Qualification" ColumnName="Qualification" />
+          <ScalarProperty Name="Phone_Number" ColumnName="Phone_Number" />
+          <ScalarProperty Name="Disability" ColumnName="Disability" />
+          <ScalarProperty Name="Disabilty_Desc" ColumnName="Disabilty_Desc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Caste_Details">
+      <EntityTypeMapping TypeName="NationModel.Caste_Details">
+        <MappingFragment StoreEntitySet="Caste_Details">
+          <ScalarProperty Name="Caste_Id" ColumnName="Caste_Id" />
+          <ScalarProperty Name="Caste1" ColumnName="Caste1" />
+          <ScalarProperty Name="Caste2" ColumnName="Caste2" />
+          <ScalarProperty Name="Caste3" ColumnName="Caste3" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Economic_Backward_Class_Details">
+      <EntityTypeMapping TypeName="NationModel.Economic_Backward_Class_Details">
+        <MappingFragment StoreEntitySet="Economic_Backward_Class_Details">
+          <ScalarProperty Name="Ec_Id" ColumnName="Ec_Id" />
+          <ScalarProperty Name="Condition_1" ColumnName="Condition_1" />
+          <ScalarProperty Name="condition_2" ColumnName="condition_2" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Gender_Details">
+      <EntityTypeMapping TypeName="NationModel.Gender_Details">
+        <MappingFragment StoreEntitySet="Gender_Details">
+          <ScalarProperty Name="Gen_Id" ColumnName="Gen_Id" />
+          <ScalarProperty Name="gender_1" ColumnName="gender_1" />
+          <ScalarProperty Name="gender_2" ColumnName="gender_2" />
+          <ScalarProperty Name="gender_3" ColumnName="gender_3" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Login_Details">
+      <EntityTypeMapping TypeName="NationModel.Login_Details">
+        <MappingFragment StoreEntitySet="Login_Details">
+          <ScalarProperty Name="Login_Id" ColumnName="Login_Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Email_Id" ColumnName="Email_Id" />
+          <ScalarProperty Name="User_Type" ColumnName="User_Type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NationalEdu_Details">
+      <EntityTypeMapping TypeName="NationModel.NationalEdu_Details">
+        <MappingFragment StoreEntitySet="NationalEdu_Details">
+          <ScalarProperty Name="MAT_SAT_Rollno" ColumnName="MAT_SAT_Rollno" />
+          <ScalarProperty Name="MAT_SAT_Score" ColumnName="MAT_SAT_Score" />
+          <ScalarProperty Name="Eighth_class_per" ColumnName="Eighth_class_per" />
+          <ScalarProperty Name="Nineth_class_per" ColumnName="Nineth_class_per" />
+          <ScalarProperty Name="Eleventh_class_per" ColumnName="Eleventh_class_per" />
+          <ScalarProperty Name="Eleventh_specialization" ColumnName="Eleventh_specialization" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Qualification_Details">
+      <EntityTypeMapping TypeName="NationModel.Qualification_Details">
+        <MappingFragment StoreEntitySet="Qualification_Details">
+          <ScalarProperty Name="Qualification_Id" ColumnName="Qualification_Id" />
+          <ScalarProperty Name="Qualification1" ColumnName="Qualification1" />
+          <ScalarProperty Name="Qualification2" ColumnName="Qualification2" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="REG_Number">
+      <EntityTypeMapping TypeName="NationModel.REG_Number">
+        <MappingFragment StoreEntitySet="REG_Number">
+          <ScalarProperty Name="Applicant_Id" ColumnName="Applicant_Id" />
+          <ScalarProperty Name="Register_Number" ColumnName="Register_Number" />
+          <ScalarProperty Name="Hsc_Rollno" ColumnName="Hsc_Rollno" />
+          <ScalarProperty Name="Ssc_Rollno" ColumnName="Ssc_Rollno" />
+          <ScalarProperty Name="MAT_SAT_Rollno" ColumnName="MAT_SAT_Rollno" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RegScheme_details">
+      <EntityTypeMapping TypeName="NationModel.RegScheme_details">
+        <MappingFragment StoreEntitySet="RegScheme_details">
+          <ScalarProperty Name="Applicant_ID" ColumnName="Applicant_ID" />
+          <ScalarProperty Name="Admin_Id" ColumnName="Admin_Id" />
+          <ScalarProperty Name="Date_of_apply" ColumnName="Date_of_apply" />
+          <ScalarProperty Name="Smart_Card_Id" ColumnName="Smart_Card_Id" />
+          <ScalarProperty Name="App_status" ColumnName="App_status" />
+          <ScalarProperty Name="Acc_No" ColumnName="Acc_No" />
+          <ScalarProperty Name="Bank_name" ColumnName="Bank_name" />
+          <ScalarProperty Name="IFSC_CODE" ColumnName="IFSC_CODE" />
+          <ScalarProperty Name="Payment_Status" ColumnName="Payment_Status" />
+          <ScalarProperty Name="Funded_amt" ColumnName="Funded_amt" />
+          <ScalarProperty Name="Fund_transfer_date" ColumnName="Fund_transfer_date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Scheme_Details">
+      <EntityTypeMapping TypeName="NationModel.Scheme_Details">
+        <MappingFragment StoreEntitySet="Scheme_Details">
+          <ScalarProperty Name="Scheme_Id" ColumnName="Scheme_Id" />
+          <ScalarProperty Name="Scheme_Type" ColumnName="Scheme_Type" />
+          <ScalarProperty Name="Scheme_Name" ColumnName="Scheme_Name" />
+          <ScalarProperty Name="Scholarship_Amount" ColumnName="Scholarship_Amount" />
+          <ScalarProperty Name="Age_Criteria" ColumnName="Age_Criteria" />
+          <ScalarProperty Name="Marks_Criteria" ColumnName="Marks_Criteria" />
+          <ScalarProperty Name="Caste" ColumnName="Caste" />
+          <ScalarProperty Name="Annual_Income" ColumnName="Annual_Income" />
+          <ScalarProperty Name="Qualification_Criteria" ColumnName="Qualification_Criteria" />
+          <ScalarProperty Name="Economically_Backward_Classes" ColumnName="Economically_Backward_Classes" />
+          <ScalarProperty Name="Gender_Id" ColumnName="Gender_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="Nat" FunctionName="NationModel.Store.Nat" />
+    <FunctionImportMapping FunctionImportName="Nat11" FunctionName="NationModel.Store.Nat11" />
+    <FunctionImportMapping FunctionImportName="Nat9" FunctionName="NationModel.Store.Nat9" />
+    <FunctionImportMapping FunctionImportName="Regscheme" FunctionName="NationModel.Store.Regscheme" />
+    <FunctionImportMapping FunctionImportName="RegschemeAD" FunctionName="NationModel.Store.RegschemeAD" />
+    <FunctionImportMapping FunctionImportName="adminview" FunctionName="NationModel.Store.adminview">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="NationModel.adminview_Result">
+          <ScalarProperty Name="Applicant_Id" ColumnName="Applicant_Id" />
+          <ScalarProperty Name="First_Name" ColumnName="First_Name" />
+          <ScalarProperty Name="Last_Name" ColumnName="Last_Name" />
+          <ScalarProperty Name="Date_Of_Birth" ColumnName="Date_Of_Birth" />
+          <ScalarProperty Name="Aadhar_Number" ColumnName="Aadhar_Number" />
+          <ScalarProperty Name="Scheme_Id" ColumnName="Scheme_Id" />
+          <ScalarProperty Name="Economic_Backward_Class" ColumnName="Economic_Backward_Class" />
+          <ScalarProperty Name="Economic_Backward_Class_Cert" ColumnName="Economic_Backward_Class_Cert" />
+          <ScalarProperty Name="Father_Name" ColumnName="Father_Name" />
+          <ScalarProperty Name="Mother_Name" ColumnName="Mother_Name" />
+          <ScalarProperty Name="Annual_Income" ColumnName="Annual_Income" />
+          <ScalarProperty Name="Income_Certificate_No" ColumnName="Income_Certificate_No" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Religion" ColumnName="Religion" />
+          <ScalarProperty Name="Caste" ColumnName="Caste" />
+          <ScalarProperty Name="Disability" ColumnName="Disability" />
+          <ScalarProperty Name="Present_Course" ColumnName="Present_Course" />
+          <ScalarProperty Name="Course_Period" ColumnName="Course_Period" />
+          <ScalarProperty Name="Mode_Of_Study" ColumnName="Mode_Of_Study" />
+          <ScalarProperty Name="Course_Start_Date" ColumnName="Course_Start_Date" />
+          <ScalarProperty Name="Institution_Name" ColumnName="Institution_Name" />
+          <ScalarProperty Name="Degree_Percentage" ColumnName="Degree_Percentage" />
+          <ScalarProperty Name="Roll_No" ColumnName="Roll_No" />
+          <ScalarProperty Name="Marks_Percentage" ColumnName="Marks_Percentage" />
+          <ScalarProperty Name="sscRoll_No" ColumnName="sscRoll_No" />
+          <ScalarProperty Name="sscMarks_Percentage" ColumnName="sscMarks_Percentage" />
+          <ScalarProperty Name="MAT_SAT_Rollno" ColumnName="MAT_SAT_Rollno" />
+          <ScalarProperty Name="MAT_SAT_Score" ColumnName="MAT_SAT_Score" />
+          <ScalarProperty Name="Eighth_class_per" ColumnName="Eighth_class_per" />
+          <ScalarProperty Name="Nineth_class_per" ColumnName="Nineth_class_per" />
+          <ScalarProperty Name="Eleventh_class_per" ColumnName="Eleventh_class_per" />
+          <ScalarProperty Name="Date_of_apply" ColumnName="Date_of_apply" />
+          <ScalarProperty Name="Smart_Card_Id" ColumnName="Smart_Card_Id" />
+          <ScalarProperty Name="Acc_No" ColumnName="Acc_No" />
+          <ScalarProperty Name="Bank_name" ColumnName="Bank_name" />
+          <ScalarProperty Name="IFSC_CODE" ColumnName="IFSC_CODE" />
+          <ScalarProperty Name="Photo" ColumnName="Photo" />
+          <ScalarProperty Name="Aadhar_Card" ColumnName="Aadhar_Card" />
+          <ScalarProperty Name="Community_Certificate" ColumnName="Community_Certificate" />
+          <ScalarProperty Name="Degree_Marksheet" ColumnName="Degree_Marksheet" />
+          <ScalarProperty Name="HSC_Marksheet" ColumnName="HSC_Marksheet" />
+          <ScalarProperty Name="SSC_MarkSheet" ColumnName="SSC_MarkSheet" />
+          <ScalarProperty Name="Fees_Receipt" ColumnName="Fees_Receipt" />
+          <ScalarProperty Name="Id_Card" ColumnName="Id_Card" />
+          <ScalarProperty Name="Nativity_Certificate" ColumnName="Nativity_Certificate" />
+          <ScalarProperty Name="AcknowledgeCert_Class8" ColumnName="AcknowledgeCert_Class8" />
+          <ScalarProperty Name="AcknowledgeCert_Class9" ColumnName="AcknowledgeCert_Class9" />
+          <ScalarProperty Name="AcknowledgeCert_Class11" ColumnName="AcknowledgeCert_Class11" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Regdeg" FunctionName="NationModel.Store.Regdeg" />
+    <FunctionImportMapping FunctionImportName="Reghsc" FunctionName="NationModel.Store.Reghsc" />
+    <FunctionImportMapping FunctionImportName="Regssc" FunctionName="NationModel.Store.Regssc" />
+    <FunctionImportMapping FunctionImportName="RegNatt" FunctionName="NationModel.Store.RegNatt" />
+    <FunctionImportMapping FunctionImportName="Nat111" FunctionName="NationModel.Store.Nat111" />
+    <FunctionImportMapping FunctionImportName="Nat99" FunctionName="NationModel.Store.Nat99" />
+    <EntitySetMapping Name="Files3">
+      <EntityTypeMapping TypeName="NationModel.Files3">
+        <MappingFragment StoreEntitySet="Files3">
+          <ScalarProperty Name="Income_Certificate" ColumnName="Income_Certificate" />
+          <ScalarProperty Name="Nativity_Certificate" ColumnName="Nativity_Certificate" />
+          <ScalarProperty Name="Community_Certificate" ColumnName="Community_Certificate" />
+          <ScalarProperty Name="Degree_Marksheet" ColumnName="Degree_Marksheet" />
+          <ScalarProperty Name="HSC_Marksheet" ColumnName="HSC_Marksheet" />
+          <ScalarProperty Name="SSC_MarkSheet" ColumnName="SSC_MarkSheet" />
+          <ScalarProperty Name="Aadhar_Card" ColumnName="Aadhar_Card" />
+          <ScalarProperty Name="Photo" ColumnName="Photo" />
+          <ScalarProperty Name="Applicant_Id" ColumnName="Applicant_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="viewappl" FunctionName="NationModel.Store.viewappl">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="NationModel.viewappl_Result">
+          <ScalarProperty Name="Applicant_Id" ColumnName="Applicant_Id" />
+          <ScalarProperty Name="First_Name" ColumnName="First_Name" />
+          <ScalarProperty Name="Last_Name" ColumnName="Last_Name" />
+          <ScalarProperty Name="Date_Of_Birth" ColumnName="Date_Of_Birth" />
+          <ScalarProperty Name="Aadhar_Number" ColumnName="Aadhar_Number" />
+          <ScalarProperty Name="Scheme_Id" ColumnName="Scheme_Id" />
+          <ScalarProperty Name="Economic_Backward_Class" ColumnName="Economic_Backward_Class" />
+          <ScalarProperty Name="Economic_Backward_Class_Cert" ColumnName="Economic_Backward_Class_Cert" />
+          <ScalarProperty Name="Father_Name" ColumnName="Father_Name" />
+          <ScalarProperty Name="Mother_Name" ColumnName="Mother_Name" />
+          <ScalarProperty Name="Annual_Income" ColumnName="Annual_Income" />
+          <ScalarProperty Name="Income_Certificate_No" ColumnName="Income_Certificate_No" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Religion" ColumnName="Religion" />
+          <ScalarProperty Name="Caste" ColumnName="Caste" />
+          <ScalarProperty Name="Disability" ColumnName="Disability" />
+          <ScalarProperty Name="Present_Course" ColumnName="Present_Course" />
+          <ScalarProperty Name="Course_Period" ColumnName="Course_Period" />
+          <ScalarProperty Name="Mode_Of_Study" ColumnName="Mode_Of_Study" />
+          <ScalarProperty Name="Course_Start_Date" ColumnName="Course_Start_Date" />
+          <ScalarProperty Name="Institution_Name" ColumnName="Institution_Name" />
+          <ScalarProperty Name="Degree_Percentage" ColumnName="Degree_Percentage" />
+          <ScalarProperty Name="Roll_No" ColumnName="Roll_No" />
+          <ScalarProperty Name="Marks_Percentage" ColumnName="Marks_Percentage" />
+          <ScalarProperty Name="sscRoll_No" ColumnName="sscRoll_No" />
+          <ScalarProperty Name="sscMarks_Percentage" ColumnName="sscMarks_Percentage" />
+          <ScalarProperty Name="Date_of_apply" ColumnName="Date_of_apply" />
+          <ScalarProperty Name="Smart_Card_Id" ColumnName="Smart_Card_Id" />
+          <ScalarProperty Name="Acc_No" ColumnName="Acc_No" />
+          <ScalarProperty Name="Bank_name" ColumnName="Bank_name" />
+          <ScalarProperty Name="IFSC_CODE" ColumnName="IFSC_CODE" />
+          <ScalarProperty Name="Photo" ColumnName="Photo" />
+          <ScalarProperty Name="Aadhar_Card" ColumnName="Aadhar_Card" />
+          <ScalarProperty Name="Community_Certificate" ColumnName="Community_Certificate" />
+          <ScalarProperty Name="Degree_Marksheet" ColumnName="Degree_Marksheet" />
+          <ScalarProperty Name="HSC_Marksheet" ColumnName="HSC_Marksheet" />
+          <ScalarProperty Name="SSC_MarkSheet" ColumnName="SSC_MarkSheet" />
+          <ScalarProperty Name="Nativity_Certificate" ColumnName="Nativity_Certificate" />
+          <ScalarProperty Name="Income_Certificate" ColumnName="Income_Certificate" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="verifiedappl" FunctionName="NationModel.Store.verifiedappl">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="NationModel.verifiedappl_Result">
+          <ScalarProperty Name="Applicant_Id" ColumnName="Applicant_Id" />
+          <ScalarProperty Name="First_Name" ColumnName="First_Name" />
+          <ScalarProperty Name="Last_Name" ColumnName="Last_Name" />
+          <ScalarProperty Name="Date_Of_Birth" ColumnName="Date_Of_Birth" />
+          <ScalarProperty Name="Aadhar_Number" ColumnName="Aadhar_Number" />
+          <ScalarProperty Name="Scheme_Id" ColumnName="Scheme_Id" />
+          <ScalarProperty Name="Economic_Backward_Class" ColumnName="Economic_Backward_Class" />
+          <ScalarProperty Name="Economic_Backward_Class_Cert" ColumnName="Economic_Backward_Class_Cert" />
+          <ScalarProperty Name="Father_Name" ColumnName="Father_Name" />
+          <ScalarProperty Name="Mother_Name" ColumnName="Mother_Name" />
+          <ScalarProperty Name="Annual_Income" ColumnName="Annual_Income" />
+          <ScalarProperty Name="Income_Certificate_No" ColumnName="Income_Certificate_No" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Religion" ColumnName="Religion" />
+          <ScalarProperty Name="Caste" ColumnName="Caste" />
+          <ScalarProperty Name="Disability" ColumnName="Disability" />
+          <ScalarProperty Name="Present_Course" ColumnName="Present_Course" />
+          <ScalarProperty Name="Course_Period" ColumnName="Course_Period" />
+          <ScalarProperty Name="Mode_Of_Study" ColumnName="Mode_Of_Study" />
+          <ScalarProperty Name="Course_Start_Date" ColumnName="Course_Start_Date" />
+          <ScalarProperty Name="Institution_Name" ColumnName="Institution_Name" />
+          <ScalarProperty Name="Degree_Percentage" ColumnName="Degree_Percentage" />
+          <ScalarProperty Name="Roll_No" ColumnName="Roll_No" />
+          <ScalarProperty Name="Marks_Percentage" ColumnName="Marks_Percentage" />
+          <ScalarProperty Name="sscRoll_No" ColumnName="sscRoll_No" />
+          <ScalarProperty Name="sscMarks_Percentage" ColumnName="sscMarks_Percentage" />
+          <ScalarProperty Name="Date_of_apply" ColumnName="Date_of_apply" />
+          <ScalarProperty Name="Smart_Card_Id" ColumnName="Smart_Card_Id" />
+          <ScalarProperty Name="Acc_No" ColumnName="Acc_No" />
+          <ScalarProperty Name="Bank_name" ColumnName="Bank_name" />
+          <ScalarProperty Name="IFSC_CODE" ColumnName="IFSC_CODE" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Regschstud" FunctionName="NationModel.Store.Regschstud" />
+    <FunctionImportMapping FunctionImportName="Regschadminn" FunctionName="NationModel.Store.Regschadminn" />
+    <FunctionImportMapping FunctionImportName="RegSchAdRej" FunctionName="NationModel.Store.RegSchAdRej" />
+  </EntityContainerMapping>
+</Mapping>

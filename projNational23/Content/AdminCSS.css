@@ -1,0 +1,49 @@
+﻿/*/* Tablet Landscape */
+/*@media screen and (max-width: 1060px) {
+    #primary {
+        width: 67%;
+    }
+
+    #secondary {
+        width: 30%;
+        margin-left: 3%;
+    }
+}*/
+/* Tabled Portrait */
+/*@media screen and (max-width: 768px) {
+    #primary {
+        width: 100%;
+    }
+
+    #secondary {
+        width: 100%;
+        margin: 0;
+        border: none;
+    }
+}*/
+
+
+
+
+.btn {
+    background: rgba(234, 142, 77, 0.87);
+    padding: 10px;
+    width: 140px;
+    height: 40px;
+    border: solid;
+    background-color: #ef9d63;
+    text-decoration-color: white;
+    font-size: 12px;
+    cursor: pointer;
+    background-position: center;
+    text-align: center;
+}
+
+.name {
+    border: 1px solid #ff0000;
+}
+
+.btn:hover {
+    background-color: #f29b5e;
+    color: #ffffff;
+}

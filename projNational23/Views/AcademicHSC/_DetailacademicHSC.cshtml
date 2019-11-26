@@ -1,0 +1,45 @@
+﻿@model projNational23.AcademicHSC_Details
+@{
+    Layout = "~/Views/Shared/_Studlayout.cshtml";
+}
+<div>
+    <h4>Academic HSC Details</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Marks_Percentage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Marks_Percentage)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Specialization)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Specialization)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Board)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Board)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Year_Of_Passing)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Year_Of_Passing)
+        </dd>
+
+    </dl>
+</div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
